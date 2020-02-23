@@ -1,0 +1,57 @@
+<html>
+<head>
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css" integrity="sha384-rwoIResjU2yc3z8GV/NPeZWAv56rSmLldC3R/AZzGRnGxQQKnKkoFVhFQhNUwEyJ" crossorigin="anonymous">
+
+<style>
+body{
+  margin-top:70px;
+  background:#333;
+  color:#fff;
+}
+</style>
+
+<title>Chmod Conversion</title>
+
+</head>
+
+<body>
+<div class="container">
+  <div class="row">
+    <div class="col-md-6 offset-md-3">
+      <h1 class="display-4 text-center mb-3">MBPS to MBS Converter</h1>
+      <form>
+        <div class="form-group">
+          <input id="mbps" type="number" class="form-control form-control-lg" placeholder="Enter MPBS...">
+        </div>
+      </form>
+
+
+      <div id="output">
+        <div class="card card-primary mb-2">
+          <div class="card-block">
+            <h4>MB/S:</h4>
+            <div id="mbs"></div>
+          </div>
+        </div>
+
+
+      </div>
+    </div>
+  </div>
+</div>
+
+<script>
+
+document.getElementById("output").style.visibility = "hidden";
+document.getElementById("mbps").addEventListener("input", function(e) {
+  document.getElementById("output").style.visibility = "visible";
+  let conv = e.target.value;
+  document.getElementById("mbs").innerHTML = conv / 8;
+
+});
+
+
+</script>
+
+</body>
+</html>

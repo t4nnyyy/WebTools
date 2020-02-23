@@ -1,0 +1,81 @@
+<html>
+<head>
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css" integrity="sha384-rwoIResjU2yc3z8GV/NPeZWAv56rSmLldC3R/AZzGRnGxQQKnKkoFVhFQhNUwEyJ" crossorigin="anonymous">
+
+<style>
+body{
+  margin-top:70px;
+  background:#333;
+  color:#fff;
+}
+</style>
+
+<title>Chmod Conversion</title>
+
+</head>
+
+<body>
+<div class="container">
+  <div class="row">
+    <div class="col-md-6 offset-md-3">
+      <img src="logo.jpg"/>
+      <br><br>
+      <form>
+        <div class="form-group">
+          <input id="inpmbps" type="number" class="form-control form-control-lg" placeholder="Enter MBPS...">
+          <input id="inpmbs" type="number" class="form-control form-control-lg" placeholder="Enter MB/S...">
+
+      
+        </div>
+      </form>
+
+
+      <div id="output">
+        <div class="card card-primary mb-2">
+          
+          <div class="card-block">
+            <h4>MB/S:</h4>
+            <div id="mbs"></div>
+          </div>
+        </div>
+
+<div id="output1">
+        <div class="card card-primary mb-2">
+ <div class="card-block">
+            <h4>MBPS:</h4>
+            <div id="mbps"></div>
+          </div>
+          </div>
+          </div>
+
+
+      </div>
+    </div>
+  </div>
+</div>
+
+<script>
+
+document.getElementById("output").style.visibility = "hidden";
+document.getElementById("inpmbps").addEventListener("input", function(e) {
+  document.getElementById("output").style.visibility = "visible";
+  document.getElementById("output1").style.visibility = "hidden";
+  let conv = e.target.value;
+  document.getElementById("mbs").innerHTML = conv / 8;
+
+});
+
+document.getElementById("output1").style.visibility = "hidden";
+document.getElementById("inpmbs").addEventListener("input", function(e) {
+  document.getElementById("output1").style.visibility = "visible";
+  document.getElementById("output").style.visibility = "hidden";
+  let conv1 = e.target.value;
+  document.getElementById("mbps").innerHTML = conv1 * 8;
+
+});
+
+
+</script>
+
+</body>
+</html>

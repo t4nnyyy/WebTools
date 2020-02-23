@@ -1,0 +1,47 @@
+<html>
+<head>
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css" integrity="sha384-rwoIResjU2yc3z8GV/NPeZWAv56rSmLldC3R/AZzGRnGxQQKnKkoFVhFQhNUwEyJ" crossorigin="anonymous">
+
+<style>
+body{
+  margin-top:70px;
+  background:#333;
+  color:#fff;
+}
+</style>
+
+<title>MBPS Conversion</title>
+
+</head>
+
+<body>
+<div class="container">
+  <div class="row">
+    <div class="col-md-6 offset-md-3">
+      <form>
+        <div class="form-group">
+          <input id="inpmbps" type="number" class="form-control form-control-lg" placeholder="Enter Mbps...">
+          <label for="inpmbps">Mega Bits Per Second (Mbps)</label>
+          <input id="inpmbs" type="number" class="form-control form-control-lg" placeholder="Enter MBPS...">
+          <label for="inpmbs">Mega Byte Per Second (MBps or MB/s)</label>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>
+
+<script>
+var mbps = document.getElementById('inpmbps');
+var mbs = document.getElementById('inpmbs');
+    
+mbps.addEventListener('input', function() {
+  mbs.value = this.value/8;
+});
+
+mbs.addEventListener('input', function() {
+  mbps.value = this.value*8;
+});    
+</script>
+
+</body>
+</html>
